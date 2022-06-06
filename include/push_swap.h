@@ -13,6 +13,9 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdlib.h>
 
+int		ft_atoi(const char *str);
+char	**ft_split(char const *s, char c);
 
 #endif
