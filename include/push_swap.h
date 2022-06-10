@@ -14,8 +14,10 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
+int		error_check(int argc, char **argv);
 
 #endif

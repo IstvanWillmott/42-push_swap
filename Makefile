@@ -21,6 +21,7 @@ OBJDIR = ./obj
 SRC = push_swap.c \
 	ft_atoi.c \
 	ft_split.c \
+	error_check.c \
 
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 
