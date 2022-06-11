@@ -14,12 +14,15 @@
 
 int argv_array_duplicate(char **argv)
 {
-	char g;
-
+	int g;
+	
+	g = 0;
 	g = argv[1][0];
+	if (g == 1)
+		g = 1;
 	return (0);
 }
-
+#include <stdio.h>
 int argv_list_diplicate(char **argv)
 {
 	int	i;
@@ -34,7 +37,6 @@ int argv_list_diplicate(char **argv)
 	while (argv[i][0])
 	{
 		strgcur = ft_atoi(argv[i]);
-		g = i + 1;
 		while (argv[g][0])
 		{
 			checkcur = ft_atoi(argv[g]);
@@ -57,8 +59,9 @@ int	argv_array_error(char **argv)
 		while (argv[1][i] == 32)
 			i++;
 		if (argv[1][i] != '\0')
-			if (argv[1][i] < 48 || argv[1][i] > 57)
+			if ((argv[1][i] < 48 || argv[1][i] > 57) && argv[1][i] != 45)
 				return (1);
+		i++;
 	}
 	return (0);
 }
@@ -70,7 +73,7 @@ int	argv_list_error(char **argv)
 
 	i = 1;
 	g = 0;
-	while(argv[i][0])
+	while(argv[i])
 	{
 		while (argv[i][g])
 		{
@@ -86,18 +89,19 @@ int	argv_list_error(char **argv)
 
 int	error_check(int argc, char **argv)
 {
+	
 	int error;
 
 	error = 0;
-	
 	if (argc == 2)
 	{
 		error = argv_array_error(argv);
 		if (error == 0)
 			error = argv_array_duplicate(argv);
 	}
-	else if (argc > 2)
+	if (argc > 2)
 	{
+
 		error = argv_list_error(argv);
 		if (error == 0)
 			error = argv_list_diplicate(argv);

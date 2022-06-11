@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include <stdio.h>
 int	*stacka_list(int argc, char *argv[], int *len)
 {
+	
+		printf("test");
 	int	*stacka;
 
 	stacka = malloc(4 * (argc - 1));
@@ -22,6 +24,7 @@ int	*stacka_list(int argc, char *argv[], int *len)
 		stacka[len[0]] = ft_atoi(argv[len[0] + 1]);
 		len[0]++;
 	}
+	printf("test");
 	return (stacka);
 }
 
@@ -48,6 +51,7 @@ int	*stacka_array(char *argv[], int *len)
 #include <stdio.h>
 int	main(int argc, char *argv[])
 {
+	printf("tesT");
 	int	*stacka;
 	int	*len;
 	int stacklen;
