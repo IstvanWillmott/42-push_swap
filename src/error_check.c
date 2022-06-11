@@ -11,15 +11,34 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include <stdio.h>
 int argv_array_duplicate(char **argv)
 {
+	int i;
 	int g;
+	//int r;
+	char **stacktest;
+	int strgcur;
 	
+	i = 0;
 	g = 0;
-	g = argv[1][0];
-	if (g == 1)
-		g = 1;
+	//r = 0;
+	stacktest = ft_split(argv[1], ' ');
+	strgcur = ft_atoi(stacktest[i]);
+	while (stacktest[i])
+	{
+		strgcur = ft_atoi(stacktest[i]);
+		g = i + 1;
+		while (stacktest[g])
+		{
+			if (strgcur == ft_atoi(stacktest[g]))
+				return (1);
+			g++;
+		}
+		g++;
+		i++;
+	}
+	free (stacktest);
 	return (0);
 }
 #include <stdio.h>
@@ -34,10 +53,11 @@ int argv_list_diplicate(char **argv)
 	g = 0;
 	strgcur = ft_atoi(argv[i]);
 	checkcur = 0;
-	while (argv[i][0])
+	while (argv[i])
 	{
+		g = i + 1; 
 		strgcur = ft_atoi(argv[i]);
-		while (argv[g][0])
+		while (argv[g])
 		{
 			checkcur = ft_atoi(argv[g]);
 			if (strgcur == checkcur)
@@ -56,11 +76,12 @@ int	argv_array_error(char **argv)
 	i = 0;
 	while (argv[1][i])
 	{
-		while (argv[1][i] == 32)
+		while (argv[1][i] == ' ')
 			i++;
 		if (argv[1][i] != '\0')
-			if ((argv[1][i] < 48 || argv[1][i] > 57) && argv[1][i] != 45)
-				return (1);
+			break;
+		if ((argv[1][i] < 48 || argv[1][i] > 57) && argv[1][i] != 45)
+			return (1);
 		i++;
 	}
 	return (0);

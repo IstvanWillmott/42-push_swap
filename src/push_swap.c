@@ -51,7 +51,6 @@ int	*stacka_array(char *argv[], int *len)
 #include <stdio.h>
 int	main(int argc, char *argv[])
 {
-	printf("tesT");
 	int	*stacka;
 	int	*len;
 	int stacklen;
