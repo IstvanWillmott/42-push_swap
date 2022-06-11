@@ -11,18 +11,16 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+
 int argv_array_duplicate(char **argv)
 {
 	int i;
 	int g;
-	//int r;
 	char **stacktest;
 	int strgcur;
 	
 	i = 0;
 	g = 0;
-	//r = 0;
 	stacktest = ft_split(argv[1], ' ');
 	strgcur = ft_atoi(stacktest[i]);
 	while (stacktest[i])
@@ -41,7 +39,7 @@ int argv_array_duplicate(char **argv)
 	free (stacktest);
 	return (0);
 }
-#include <stdio.h>
+
 int argv_list_diplicate(char **argv)
 {
 	int	i;
@@ -78,7 +76,7 @@ int	argv_array_error(char **argv)
 	{
 		while (argv[1][i] == ' ')
 			i++;
-		if (argv[1][i] != '\0')
+		if (argv[1][i] == '\0')
 			break;
 		if ((argv[1][i] < 48 || argv[1][i] > 57) && argv[1][i] != 45)
 			return (1);
@@ -122,7 +120,6 @@ int	error_check(int argc, char **argv)
 	}
 	if (argc > 2)
 	{
-
 		error = argv_list_error(argv);
 		if (error == 0)
 			error = argv_list_diplicate(argv);

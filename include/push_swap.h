@@ -15,9 +15,15 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stddef.h>
 
+// HELPERS ---------
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
+int 	*ft_calloc(int count);
+
+// COMMANDS --------
+// ERROR -----------
 int		error_check(int argc, char **argv);
 
 #endif

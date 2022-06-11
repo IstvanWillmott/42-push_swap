@@ -52,12 +52,14 @@ int	*stacka_array(char *argv[], int *len)
 int	main(int argc, char *argv[])
 {
 	int	*stacka;
+	int *stackb;
 	int	*len;
 	int stacklen;
 	int	error;
 
 	len = malloc(4);
 	len[0] = 0;
+	stacklen = 0;
 	error = error_check(argc, argv);
 	if (argc != 1 && error == 0)
 	{
@@ -65,12 +67,18 @@ int	main(int argc, char *argv[])
 			stacka = stacka_array(argv, len);
 		else if (argc > 2)
 			stacka = stacka_list(argc, argv, len);
+		stackb = ft_calloc(len[0]);
+		if (argc == 2)
 		stacklen = len[0];
 		free(len);
 		//testing -----------------
 		printf("Stacklen: %d\n", stacklen);
+		printf("calloc %d\n", stackb[2]);
 		for (int i = 0; i < stacklen; i++)
-			printf("%d: %d\n", i, stacka[i]);
+		{
+			printf("%d: %d     ", i, stacka[i]);
+			printf("%d: %d\n", i, stackb[i]);
+		}
 	}
 	if (error == 1)
 		write(1, "Error\n", 7);
