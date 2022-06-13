@@ -17,13 +17,26 @@
 # include <unistd.h>
 # include <stddef.h>
 
-// HELPERS ---------
+// ------- HELPERS ---------
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 int 	*ft_calloc(int count);
 
-// COMMANDS --------
-// ERROR -----------
+// ------- COMMANDS --------
+//Swap
+void sa(int *stacka);
+void sb(int *stackb);
+void ss(int *stacka, int *stackb);
+//Rotate
+void	ra(int *stacka, int stacklen);
+void	rb(int *stackb, int stacklen);
+void	rr(int *stacka, int stacklen);
+//Reverse Rotate
+void	rra(int *stacka, int stacklen);
+void	rrb(int *stackb, int stacklen);
+void	rrr(int *stacka, int stacklen);
+
+// -------- ERROR ----------
 int		error_check(int argc, char **argv);
 
 #endif

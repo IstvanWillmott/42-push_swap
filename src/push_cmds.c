@@ -7,5 +7,3 @@ void pa(int *stacka, int *stackb)
 	stackb[0] = stacka[0];
 	stacka[0] = i;
 }
-
-void

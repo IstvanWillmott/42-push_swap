@@ -21,6 +21,10 @@ OBJDIR = ./obj
 SRC = push_swap.c \
 	ft_helpers.c \
 	error_check.c \
+	push_cmds.c \
+	rotate_cmds.c \
+	reverse_rotate_cmds.c \
+	swap_cmds.c \
 
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 

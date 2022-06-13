@@ -1,4 +1,4 @@
-void sa(int *stacka)
+/*void sa(int *stacka)
 {
 	int	i;
 
@@ -19,6 +19,6 @@ void sb(int *stackb)
 
 void ss(int *stacka, int *stackb)
 {
-	sa(&stacka);
-	sb(&stackb);
-}
+	sa(stacka);
+	sb(stackb);
+}*/

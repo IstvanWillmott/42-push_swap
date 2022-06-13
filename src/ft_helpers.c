@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//ft_split
 int	curlen(char const *s, char c, int i)
 {
 	int	len;
@@ -29,6 +30,7 @@ int	curlen(char const *s, char c, int i)
 	return (len + 1);
 }
 
+//ft_split
 void	split_assign(char const *s, char **new, char c, int segs)
 {
 	int	i;
@@ -57,6 +59,7 @@ void	split_assign(char const *s, char **new, char c, int segs)
 	new[x] = (void *)0;
 }
 
+//ft_split
 char	**ft_split(char const *s, char c)
 {
 	int		i;

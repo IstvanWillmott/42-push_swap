@@ -5,9 +5,9 @@ void ra(int *stacka, int stacklen)
 
 	i = 0;
 	strg = stacka[0];
-	while (i < stacklen)
+	while (i < stacklen - 1)
 	{
-		stacklen[i] = stacklen[i + 1];
+		stacka[i] = stacka[i + 1];
 		i++;
 	}
 	stacka[stacklen - 1] = strg;
@@ -20,10 +20,16 @@ void rb(int *stackb, int stacklen)
 
 	i = 0;
 	strg = stackb[0];
-	while (i < stacklen)
+	while (i < stacklen - 1)
 	{
 		stackb[i] = stackb[i + 1];
 		i++;
 	}
-	stacka[stacklen - 1] = strg;
+	stackb[stacklen - 1] = strg;
+}
+
+void rr(int *stacka, int *stackb, int stacklen)
+{
+	ra(stacka, stacklen);
+	rb(stackb, stacklen);
 }
