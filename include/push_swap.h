@@ -17,6 +17,15 @@
 # include <unistd.h>
 # include <stddef.h>
 
+typedef struct s_brain
+{
+	int	stacklen;
+	int	*stacka;
+	int	alen;
+	int	*stackb;
+	int	blen;
+}	t_brain;
+
 // ------- HELPERS ---------
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
@@ -30,11 +39,11 @@ void ss(int *stacka, int *stackb);
 //Rotate
 void	ra(int *stacka, int stacklen);
 void	rb(int *stackb, int stacklen);
-void	rr(int *stacka, int stacklen);
+void	rr(int *stacka, int *stackb, int stacklen);
 //Reverse Rotate
 void	rra(int *stacka, int stacklen);
 void	rrb(int *stackb, int stacklen);
-void	rrr(int *stacka, int stacklen);
+void	rrr(int *stacka, int *stackb, int stacklen);
 
 // -------- ERROR ----------
 int		error_check(int argc, char **argv);
