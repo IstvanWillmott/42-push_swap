@@ -24,9 +24,11 @@ typedef struct s_brain
 	int	alen;
 	int	*stackb;
 	int	blen;
+	int *stackc;
 }	t_brain;
 
 // ------- HELPERS ---------
+int		*normalize(t_brain *Brain);
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 int 	*ft_calloc(int count);
