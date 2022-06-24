@@ -12,38 +12,38 @@
 
 #include "push_swap.h"
 
-void rra(int *stacka, int stacklen)
+void rra(t_brain *Brain)
 {
 	int	i;
-	int strg;
+	int	strg;
 
-	i = stacklen - 1;
-	strg = stacka[i];
+	i = Brain->alen - 1;
+	strg = Brain->stacka[i];
 	while (i > 0)
 	{
-		stacka[i] = stacka[i - 1];
+		Brain->stacka[i] = Brain->stacka[i - 1];
 		i--;
 	}
-	stacka[0] = strg;
+	Brain->stacka[i] = strg;
 }
 
-void rrb(int *stackb, int stacklen)
+void rrb(t_brain *Brain)
 {
 	int	i;
-	int strg;
+	int	strg;
 
-	i = stacklen - 1;
-	strg = stackb[i];
+	i = Brain->blen - 1;
+	strg = Brain->stackb[i];
 	while (i > 0)
 	{
-		stackb[i] = stackb[i - 1];
+		Brain->stackb[i] = Brain->stackb[i - 1];
 		i--;
 	}
-	stackb[0] = strg;
+	Brain->stackb[i] = strg;
 }
 
-void rrr(int *stacka, int *stackb, int stacklen)
+void rrr(t_brain *Brain)
 {
-	rra(stacka, stacklen);
-	rrb(stackb, stacklen);
+	rra(&*Brain);
+	rrb(&*Brain);
 }

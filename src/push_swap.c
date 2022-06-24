@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 		for (int i = 0; i < Brain.stacklen; i++)
 		{
 			printf("%d: %d", i, Brain.stackc[i]);
-			printf("         %d\n", Brain.stacka[i]);
+			printf("%10d\n", Brain.stacka[i]);
 		}
 	}
 	if (error == 1)

@@ -12,12 +12,17 @@
 
 #include "push_swap.h"
 
-void pa(int *stacka, int *stackb)
+void pa(t_brain *Brain)
 {
-	int i;
+	int	i;
 
-	i = 0;
-	i = stackb[0];
-	stackb[0] = stacka[0];
-	stacka[0] = i;
+	i = Brain->alen - 1;
+	if (Brain->blen != 0)
+	{
+		while (i > 0)
+		{
+			Brain->stacka[i] = Brain->stacka[i + 1];
+			i--;
+		}
+	}
 }

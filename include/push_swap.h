@@ -44,17 +44,19 @@ int 	*ft_calloc(int count);
 
 // ------- COMMANDS --------
 //Swap
-void sa(int *stacka);
-void sb(int *stackb);
-void ss(int *stacka, int *stackb);
+void	sa(t_brain *Brain);
+void	sb(t_brain *Brain);
+void	ss(t_brain *Brain);
+//Push
+void	pa(t_brain *Brain);
 //Rotate
-void	ra(int *stacka, int stacklen);
-void	rb(int *stackb, int stacklen);
-void	rr(int *stacka, int *stackb, int stacklen);
+void	ra(t_brain *Brain);
+void	rb(t_brain *Brain);
+void	rr(t_brain *Brain);
 //Reverse Rotate
-void	rra(int *stacka, int stacklen);
-void	rrb(int *stackb, int stacklen);
-void	rrr(int *stacka, int *stackb, int stacklen);
+void	rra(t_brain *Brain);
+void	rrb(t_brain *Brain);
+void	rrr(t_brain *Brain);
 
 // -------- ERROR ----------
 int		error_check(int argc, char **argv);
