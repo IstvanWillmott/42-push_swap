@@ -24,8 +24,17 @@ typedef struct s_brain
 	int	alen;
 	int	*stackb;
 	int	blen;
-	int *stackc;
+	int	*stackc;
 }	t_brain;
+
+typedef struct s_normalize
+{
+	int	i;
+	int	g;
+	int	lower;
+	int	higher;
+	int	*stacka;
+}	t_normalize;
 
 // ------- HELPERS ---------
 int		*normalize(t_brain *Brain);

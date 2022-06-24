@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-int argv_array_duplicate(char **argv)
+int	argv_array_duplicate(char **argv)
 {
-	int i;
-	int g;
-	char **stacktest;
-	int strgcur;
-	
+	int		i;
+	int		g;
+	char	**stacktest;
+	int		strgcur;
+
 	i = 0;
 	g = 0;
 	stacktest = ft_split(argv[1], ' ');
@@ -40,11 +40,11 @@ int argv_array_duplicate(char **argv)
 	return (0);
 }
 
-int argv_list_diplicate(char **argv)
+int	argv_list_diplicate(char **argv)
 {
 	int	i;
 	int	g;
-	int strgcur;
+	int	strgcur;
 	int	checkcur;
 
 	i = 1;
@@ -53,7 +53,7 @@ int argv_list_diplicate(char **argv)
 	checkcur = 0;
 	while (argv[i])
 	{
-		g = i + 1; 
+		g = i + 1;
 		strgcur = ft_atoi(argv[i]);
 		while (argv[g])
 		{
@@ -77,7 +77,7 @@ int	argv_array_error(char **argv)
 		while (argv[1][i] == ' ')
 			i++;
 		if (argv[1][i] == '\0')
-			break;
+			break ;
 		if ((argv[1][i] < 48 || argv[1][i] > 57) && argv[1][i] != 45)
 			return (1);
 		i++;
@@ -92,11 +92,11 @@ int	argv_list_error(char **argv)
 
 	i = 1;
 	g = 0;
-	while(argv[i])
+	while (argv[i])
 	{
 		while (argv[i][g])
 		{
-			if (argv[i][g] < 48 || argv[i][g] > 57)
+			if ((argv[i][g] != '-') && (argv[i][g] < 48 || argv[i][g] > 57))
 				return (1);
 			g++;
 		}
@@ -108,8 +108,7 @@ int	argv_list_error(char **argv)
 
 int	error_check(int argc, char **argv)
 {
-	
-	int error;
+	int	error;
 
 	error = 0;
 	if (argc == 2)

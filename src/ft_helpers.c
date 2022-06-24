@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 int	*ft_calloc(int count)
 {
 	int	total_sz;
-	int i;
+	int	i;
 	int	*dst;
 
 	i = 0;

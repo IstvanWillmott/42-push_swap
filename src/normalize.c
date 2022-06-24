@@ -12,29 +12,31 @@
 
 #include "push_swap.h"
 
-int *normalize(t_brain *Brain)
+int	*normalize(t_brain *Brain)
 {
-    int    i;
-    int    g;
-    int    low;
-    int   *stacka;
+	t_normalize	norm;
 
-    i = 1;
-    g = 0;
-    low = 0;
-    stacka = (int *)calloc(Brain->stacklen, 4);
-    while (g < Brain->stacklen)
-    {
-		low = 0;
-		while (i < Brain->stacklen)
+	norm.i = 0;
+	norm.g = 0;
+	norm.lower = 0;
+	norm.higher = 0;
+	norm.stacka = ft_calloc(Brain->stacklen);
+	while (norm.i < Brain->stacklen)
+	{
+		while (norm.g < Brain->stacklen)
 		{
-			if (Brain->stackc[i] < Brain->stackc[g] && stacka[i] == 0)
-				low = i;
-			i++;
+			if (Brain->stackc[norm.i] > Brain->stackc[norm.g])
+				norm.higher++;
+			if (Brain->stackc[norm.i] < Brain->stackc[norm.g])
+				norm.lower++;
+			norm.g++;
 		}
-		stacka[low] = g + 1;
-		i = 0;
-		g++;
-    }
-    return (stacka);
+		norm.g = 0;
+		norm.stacka[norm.i] = (norm.higher - norm.lower)
+			+ (Brain->stacklen - norm.higher);
+		norm.higher = 0;
+		norm.lower = 0;
+		norm.i++;
+	}
+	return (norm.stacka);
 }

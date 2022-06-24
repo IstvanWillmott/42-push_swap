@@ -61,12 +61,15 @@ int main(int argc, char **argv)
 		else if (argc > 2)
 			Brain.stackc = stackc_list(argc, argv, &Brain);
 		Brain.stackb = ft_calloc(Brain.stacklen);
+		Brain.stacka = normalize(&Brain);
+		Brain.alen = Brain.stacklen;
 		Brain.blen = 0;
 		//TESTING ---------
 		printf("Stacklen: %d\n", Brain.stacklen);
 		for (int i = 0; i < Brain.stacklen; i++)
 		{
-			printf("%d: %d\n", i, Brain.stackc[i]);
+			printf("%d: %d", i, Brain.stackc[i]);
+			printf("         %d\n", Brain.stacka[i]);
 		}
 	}
 	if (error == 1)
