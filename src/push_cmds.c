@@ -12,17 +12,52 @@
 
 #include "push_swap.h"
 
-void pa(t_brain *Brain)
+void	pa(t_brain *brain)
 {
 	int	i;
 
-	i = Brain->alen - 1;
-	if (Brain->blen != 0)
+	i = brain->alen - 1;
+	if (brain->blen > 0)
 	{
-		while (i > 0)
+		while (i >= 0)
 		{
-			Brain->stacka[i] = Brain->stacka[i + 1];
+			brain->stacka[i + 1] = brain->stacka[i];
 			i--;
 		}
+		brain->stacka[0] = brain->stackb[0];
+		i = 0;
+		while (i < brain->blen - 1)
+		{
+			brain->stackb[i] = brain->stackb[i + 1];
+			i++;
+		}
+		brain->stackb[brain->blen - 1] = 0;
+		brain->blen--;
+		brain->alen++;
+	}
+}
+
+void	pb(t_brain *brain)
+{
+	int	i;
+
+	i = brain->blen - 1;
+	if (brain->alen > 0)
+	{
+		while (i >= 0)
+		{
+			brain->stackb[i + 1] = brain->stackb[i];
+			i--;
+		}
+		brain->stackb[0] = brain->stacka[0];
+		i = 0;
+		while (i < brain->alen - 1)
+		{
+			brain->stacka[i] = brain->stacka[i + 1];
+			i++;
+		}
+		brain->stacka[brain->alen - 1] = 0;
+		brain->alen--;
+		brain->blen++;
 	}
 }

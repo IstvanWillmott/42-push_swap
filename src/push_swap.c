@@ -13,32 +13,32 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int	*stackc_list(int argc, char *argv[], t_brain *Brain)
+int	*stackc_list(int argc, char *argv[], t_brain *brain)
 {
 	int	*stackc;
-	Brain->stacklen = 0;
 
+	brain->stacklen = 0;
 	stackc = malloc(sizeof(int) * (argc));
-	while (argv[Brain->stacklen + 1])
+	while (argv[brain->stacklen + 1])
 	{
-		stackc[Brain->stacklen] = ft_atoi(argv[Brain->stacklen + 1]);
-		Brain->stacklen++;
+		stackc[brain->stacklen] = ft_atoi(argv[brain->stacklen + 1]);
+		brain->stacklen++;
 	}
 	return (stackc);
 }
 
-int	*stackc_array(char *argv[], t_brain *Brain)
+int	*stackc_array(char *argv[], t_brain *brain)
 {
 	int		i;
 	char	**stackarray;
 	int		*stackc;
-	Brain->stacklen = 0;
 
+	brain->stacklen = 0;
 	i = 0;
 	stackarray = ft_split(argv[1], ' ');
-	while (stackarray[Brain->stacklen])
-		Brain->stacklen++;
-	stackc = malloc(4 * Brain->stacklen);
+	while (stackarray[brain->stacklen])
+		brain->stacklen++;
+	stackc = malloc(4 * brain->stacklen);
 	while (stackarray[i])
 	{
 		stackc[i] = ft_atoi(stackarray[i]);
@@ -48,29 +48,35 @@ int	*stackc_array(char *argv[], t_brain *Brain)
 	return (stackc);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_brain	Brain;
+	t_brain	brain;
 	int		error;
 
 	error = error_check(argc, argv);
 	if (argc != 1 && error == 0)
 	{
 		if (argc == 2)
-			Brain.stackc = stackc_array(argv, &Brain);
+			brain.stackc = stackc_array(argv, &brain);
 		else if (argc > 2)
-			Brain.stackc = stackc_list(argc, argv, &Brain);
-		Brain.stackb = ft_calloc(Brain.stacklen);
-		Brain.stacka = normalize(&Brain);
-		Brain.alen = Brain.stacklen;
-		Brain.blen = 0;
+			brain.stackc = stackc_list(argc, argv, &brain);
+		brain.stackb = ft_calloc(brain.stacklen);
+		brain.stacka = normalize(&brain);
+		brain.alen = brain.stacklen;
+		brain.blen = 0;
 		//TESTING ---------
-		printf("Stacklen: %d\n", Brain.stacklen);
-		for (int i = 0; i < Brain.stacklen; i++)
+		printf("Stacklen: %d\n", brain.stacklen);
+		for (int i = 0; i < brain.stacklen; i++)
 		{
-			printf("%d: %d", i, Brain.stackc[i]);
-			printf("%10d\n", Brain.stacka[i]);
+			printf("%d: %d", i, brain.stackc[i]);
+			printf("%10d\n", brain.stacka[i]);
 		}
+		/*rra(&brain);
+		for (int i = 0; i < brain.stacklen; i++)
+		{
+			printf("\n");
+			printf("%10d\n", brain.stacka[i]);
+		}*/
 	}
 	if (error == 1)
 		write(1, "Error\n", 7);

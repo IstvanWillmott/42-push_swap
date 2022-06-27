@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	*normalize(t_brain *Brain)
+int	*normalize(t_brain *brain)
 {
 	t_normalize	norm;
 
@@ -20,20 +20,20 @@ int	*normalize(t_brain *Brain)
 	norm.g = 0;
 	norm.lower = 0;
 	norm.higher = 0;
-	norm.stacka = ft_calloc(Brain->stacklen);
-	while (norm.i < Brain->stacklen)
+	norm.stacka = ft_calloc(brain->stacklen);
+	while (norm.i < brain->stacklen)
 	{
-		while (norm.g < Brain->stacklen)
+		while (norm.g < brain->stacklen)
 		{
-			if (Brain->stackc[norm.i] > Brain->stackc[norm.g])
+			if (brain->stackc[norm.i] > brain->stackc[norm.g])
 				norm.higher++;
-			if (Brain->stackc[norm.i] < Brain->stackc[norm.g])
+			if (brain->stackc[norm.i] < brain->stackc[norm.g])
 				norm.lower++;
 			norm.g++;
 		}
 		norm.g = 0;
 		norm.stacka[norm.i] = (norm.higher - norm.lower)
-			+ (Brain->stacklen - norm.higher);
+			+ (brain->stacklen - norm.higher);
 		norm.higher = 0;
 		norm.lower = 0;
 		norm.i++;

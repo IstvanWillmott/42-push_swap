@@ -12,34 +12,34 @@
 
 #include "push_swap.h"
 
-void	sa(t_brain *Brain)
+void	sa(t_brain *brain)
 {
 	int	i;
 
 	i = 0;
-	if (Brain->alen >= 2)
+	if (brain->alen >= 2)
 	{
-		i = Brain->stacka[0];
-		Brain->stacka[1] = Brain->stacka[0];
-		Brain->stacka[0] = i;
+		i = brain->stacka[0];
+		brain->stacka[1] = brain->stacka[0];
+		brain->stacka[0] = i;
 	}
 }
 
-void	sb(t_brain *Brain)
+void	sb(t_brain *brain)
 {
 	int	i;
 
 	i = 0;
-	if (Brain->blen >= 2)
+	if (brain->blen >= 2)
 	{
-		i = Brain->stackb[0];
-		Brain->stackb[1] = Brain->stackb[0];
-		Brain->stackb[0] = i;
+		i = brain->stackb[0];
+		brain->stackb[1] = brain->stackb[0];
+		brain->stackb[0] = i;
 	}
 }
 
-void	ss(t_brain *Brain)
+void	ss(t_brain *brain)
 {
-	sa(&*Brain);
-	sb(&*Brain);
+	sa(&*brain);
+	sb(&*brain);
 }

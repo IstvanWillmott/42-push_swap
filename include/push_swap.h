@@ -37,26 +37,26 @@ typedef struct s_normalize
 }	t_normalize;
 
 // ------- HELPERS ---------
-int		*normalize(t_brain *Brain);
+int		*normalize(t_brain *brain);
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
-int 	*ft_calloc(int count);
+int		*ft_calloc(int count);
 
 // ------- COMMANDS --------
 //Swap
-void	sa(t_brain *Brain);
-void	sb(t_brain *Brain);
-void	ss(t_brain *Brain);
+void	sa(t_brain *brain);
+void	sb(t_brain *brain);
+void	ss(t_brain *brain);
 //Push
-void	pa(t_brain *Brain);
+void	pa(t_brain *brain);
 //Rotate
-void	ra(t_brain *Brain);
-void	rb(t_brain *Brain);
-void	rr(t_brain *Brain);
+void	ra(t_brain *brain);
+void	rb(t_brain *brain);
+void	rr(t_brain *brain);
 //Reverse Rotate
-void	rra(t_brain *Brain);
-void	rrb(t_brain *Brain);
-void	rrr(t_brain *Brain);
+void	rra(t_brain *brain);
+void	rrb(t_brain *brain);
+void	rrr(t_brain *brain);
 
 // -------- ERROR ----------
 int		error_check(int argc, char **argv);
