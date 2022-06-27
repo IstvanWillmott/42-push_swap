@@ -71,12 +71,6 @@ int	main(int argc, char **argv)
 			printf("%d: %d", i, brain.stackc[i]);
 			printf("%10d\n", brain.stacka[i]);
 		}
-		/*rra(&brain);
-		for (int i = 0; i < brain.stacklen; i++)
-		{
-			printf("\n");
-			printf("%10d\n", brain.stacka[i]);
-		}*/
 	}
 	if (error == 1)
 		write(1, "Error\n", 7);

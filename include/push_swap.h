@@ -36,6 +36,9 @@ typedef struct s_normalize
 	int	*stacka;
 }	t_normalize;
 
+// ------- SORT ------------
+void	initialize(t_brain *Brain);
+
 // ------- HELPERS ---------
 int		*normalize(t_brain *brain);
 int		ft_atoi(const char *str);

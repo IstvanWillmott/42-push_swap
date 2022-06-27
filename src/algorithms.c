@@ -1,45 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_cmds.c                                        :+:      :+:    :+:   */
+/*   algorithms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwillmot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 12:03:15 by iwillmot          #+#    #+#             */
-/*   Updated: 2022/06/17 12:03:48 by iwillmot         ###   ########.fr       */
+/*   Created: 2022/06/27 14:59:51 by iwillmot          #+#    #+#             */
+/*   Updated: 2022/06/27 14:59:52 by iwillmot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_brain *brain)
+void initialize(t_brain *Brain)
 {
-	int	i;
-
-	i = 0;
-	if (brain->alen >= 2)
-	{
-		i = brain->stacka[1];
-		brain->stacka[1] = brain->stacka[0];
-		brain->stacka[0] = i;
-	}
-}
-
-void	sb(t_brain *brain)
-{
-	int	i;
-
-	i = 0;
-	if (brain->blen >= 2)
-	{
-		i = brain->stackb[1];
-		brain->stackb[1] = brain->stackb[0];
-		brain->stackb[0] = i;
-	}
-}
-
-void	ss(t_brain *brain)
-{
-	sa(&*brain);
-	sb(&*brain);
+	
 }
