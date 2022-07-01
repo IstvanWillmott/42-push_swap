@@ -26,6 +26,7 @@ SRC = push_swap.c \
 	reverse_rotate_cmds.c \
 	swap_cmds.c \
 	normalize.c \
+	radix.c \
 
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 

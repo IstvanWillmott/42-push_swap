@@ -25,6 +25,9 @@ typedef struct s_brain
 	int	*stackb;
 	int	blen;
 	int	*stackc;
+	int	moves;
+	int *radixls;
+	int	rsteps;
 }	t_brain;
 
 typedef struct s_normalize
@@ -37,7 +40,9 @@ typedef struct s_normalize
 }	t_normalize;
 
 // ------- SORT ------------
-void	initialize(t_brain *Brain);
+void	initialize(t_brain *brain);
+void	copy_list(t_brain *brain);
+void	radix(t_brain *brain);
 
 // ------- HELPERS ---------
 int		*normalize(t_brain *brain);

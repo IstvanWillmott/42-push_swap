@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void initialize(t_brain *Brain)
+void initialize(t_brain *brain)
 {
 	
 }

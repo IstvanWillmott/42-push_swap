@@ -64,6 +64,8 @@ int	main(int argc, char **argv)
 		brain.stacka = normalize(&brain);
 		brain.alen = brain.stacklen;
 		brain.blen = 0;
+		brain.moves = 0;
+		copy_list(&brain);
 		//TESTING ---------
 		printf("Stacklen: %d\n", brain.stacklen);
 		for (int i = 0; i < brain.stacklen; i++)
@@ -71,6 +73,14 @@ int	main(int argc, char **argv)
 			printf("%d: %d", i, brain.stackc[i]);
 			printf("%10d\n", brain.stacka[i]);
 		}
+		radix(&brain);
+		printf("\n");
+		for (int i = 0; i < brain.stacklen; i++)
+			printf("%d\n", brain.radixls[i]);
+		radix(&brain);
+		printf("\n");
+		for (int i = 0; i < brain.stacklen; i++)
+			printf("%d\n", brain.radixls[i]);
 	}
 	if (error == 1)
 		write(1, "Error\n", 7);
