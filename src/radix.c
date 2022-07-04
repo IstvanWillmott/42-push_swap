@@ -62,7 +62,7 @@ void	rewrite_radixls(t_brain *brain, int *tempsort)
 		i++;
 	}
 }
-#include <stdio.h>
+
 void	radix(t_brain *brain)
 {
 	int	i;

@@ -23,6 +23,8 @@ void	sa(t_brain *brain)
 		brain->stacka[1] = brain->stacka[0];
 		brain->stacka[0] = i;
 	}
+	brain->moves++;
+	write(1, "sa\n", 4);
 }
 
 void	sb(t_brain *brain)
@@ -36,10 +38,14 @@ void	sb(t_brain *brain)
 		brain->stackb[1] = brain->stackb[0];
 		brain->stackb[0] = i;
 	}
+	brain->moves++;
+	write(1, "sb\n", 4);
 }
 
 void	ss(t_brain *brain)
 {
 	sa(&*brain);
 	sb(&*brain);
+	brain->moves -= 1;
+	write(1, "(equiv. ss)\n", 13);
 }

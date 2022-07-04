@@ -43,6 +43,8 @@ typedef struct s_normalize
 void	initialize(t_brain *brain);
 void	copy_list(t_brain *brain);
 void	radix(t_brain *brain);
+void	three_len(t_brain *brain);
+void	five_len(t_brain *brain);
 
 // ------- HELPERS ---------
 int		*normalize(t_brain *brain);
@@ -57,6 +59,7 @@ void	sb(t_brain *brain);
 void	ss(t_brain *brain);
 //Push
 void	pa(t_brain *brain);
+void	pb(t_brain *brain);
 //Rotate
 void	ra(t_brain *brain);
 void	rb(t_brain *brain);
