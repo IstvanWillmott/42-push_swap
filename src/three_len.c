@@ -49,34 +49,3 @@ void	three_len(t_brain *brain)
 		}
 	}
 }
-
-void	five_len(t_brain *brain)
-{
-	int i;
-	int	pos;
-	
-	i = 5;
-	pos = 0;
-	while (brain->stacka[pos] != 4)
-		pos++;
-	while (pos != 0)
-	{
-		ra(&*brain);
-		pos--;
-	}
-	pb(&*brain);
-	while (brain->stacka[pos] != 5)
-		pos++;
-	while (pos != 0)
-	{
-		ra(&*brain);
-		pos--;
-	}
-	pb(&*brain);
-	three_len(&*brain);
-	pa(&*brain);
-	pa(&*brain);
-	rra(&*brain);
-	rra(&*brain);	
-	rra(&*brain);
-}

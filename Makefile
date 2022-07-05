@@ -27,6 +27,7 @@ SRC = push_swap.c \
 	swap_cmds.c \
 	normalize.c \
 	three_len.c \
+	five_len.c \
 	algorithms.c \
 
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
