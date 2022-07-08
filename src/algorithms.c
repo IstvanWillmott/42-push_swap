@@ -12,10 +12,35 @@
 
 #include "push_swap.h"
 
-/*void	long_len(t_brain *brain)
+void	move_and_swap(t_brain *brain)
 {
 	
-}*/
+}
+
+void	long_len(t_brain *brain)
+{
+	int	i;
+	int	curcheck;
+	int	mod;
+
+	i = 0;
+	curcheck = 9;
+	mod = cur_mod(&*brain);
+	while (curcheck >= 0)
+	{
+		while (i < brain->alen)
+		{
+			mod = brain->stacka[i] % 10;
+			if (mod > 10)
+				temp = temp / (mod / 10);
+			if (mod == curcheck)
+
+			i++;
+		}
+		i = 0;
+		curcheck++;
+	}
+}
 
 void	initialize(t_brain *brain)
 {
@@ -23,6 +48,6 @@ void	initialize(t_brain *brain)
 		three_len(&*brain);
 	if (brain->alen == 5)
 		five_len(&*brain);
-	//else
-		//long_len(&*brain);
+	else
+		long_len(&*brain);
 }

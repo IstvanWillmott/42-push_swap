@@ -51,6 +51,7 @@ int		*normalize(t_brain *brain);
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 int		*ft_calloc(int count);
+int		cur_mod(t_brain *brain);
 
 // ------- COMMANDS --------
 //Swap
