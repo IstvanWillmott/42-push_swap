@@ -12,41 +12,44 @@
 
 #include "push_swap.h"
 
-void	move_and_swap(t_brain *brain)
-{
-	
-}
-
 void	long_len(t_brain *brain)
 {
 	int	i;
 	int	curcheck;
 	int	mod;
+	int	temp;
 
 	i = 0;
-	curcheck = 9;
+	curcheck = 0;
 	mod = cur_mod(&*brain);
-	while (curcheck >= 0)
+	temp = 0;
+	while (curcheck < 1)
 	{
-		while (i < brain->alen)
+		while (i < brain->stacklen)
 		{
-			mod = brain->stacka[i] % 10;
-			if (mod > 10)
-				temp = temp / (mod / 10);
-			if (mod == curcheck)
-
+			//temp = brain->stacka[i] % 2;
+			//if (mod > 10)
+			//	temp = temp / (mod / 10);
+			//if (temp == curcheck)
+			//	move_top(&*brain, i);
+			if ((brain->stacka[0] % 2) == 0)
+				pb(&*brain);
+			else
+				ra(&*brain);
 			i++;
 		}
 		i = 0;
 		curcheck++;
 	}
+	//restack_a(&*brain);
+	brain->rsteps++;
 }
 
 void	initialize(t_brain *brain)
 {
 	if (brain->alen == 3)
 		three_len(&*brain);
-	if (brain->alen == 5)
+	else if (brain->alen == 5)
 		five_len(&*brain);
 	else
 		long_len(&*brain);

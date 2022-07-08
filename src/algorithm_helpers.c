@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm_helpers.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iwillmot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/08 11:38:04 by iwillmot          #+#    #+#             */
+/*   Updated: 2022/07/08 11:38:06 by iwillmot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
 int cur_mod(t_brain *brain)
 {
     int i;
@@ -5,7 +19,7 @@ int cur_mod(t_brain *brain)
 
     i = 0;
     mod = 10;
-    while (i < brain->moves)
+    while (i < brain->rsteps)
     {
         mod *= 10;
         i++;
@@ -13,26 +27,38 @@ int cur_mod(t_brain *brain)
     return (mod);
 }
 
-void sort_down(t_brain *brain, int pos)
+void move_top(t_brain *brain, int pos)
 {
     int i;
 
     i = 0;
-    while (i < (brain->stacklen - pos)
-    {
-        rra(&*brain);
-        i++;
-    }
+	if (pos > brain->alen - pos)
+	{
+		while (i < (brain->alen - pos))
+		{
+			rra(&*brain);
+			i++;
+		}
+	}
+	else
+	{
+		while (i < (pos))
+		{
+			ra(&*brain);
+			i++;
+		}
+	}
+	pb(&*brain);
 }
 
-void sort_up(t_brain *brain, int pos)
+void restack_a(t_brain *brain)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < (brain->stacklen - pos)
-    {
-        ra(&*brain);
-        i++;
-    }
+	i = 0;
+	while (i < brain->stacklen)
+	{
+		pa(&*brain);
+		i++;
+	}
 }

@@ -46,6 +46,10 @@ void	radix(t_brain *brain);
 void	three_len(t_brain *brain);
 void	five_len(t_brain *brain);
 
+// ------- SORT HELPERS ----
+void 	move_top(t_brain *brain, int pos);
+void 	restack_a(t_brain *brain);
+
 // ------- HELPERS ---------
 int		*normalize(t_brain *brain);
 int		ft_atoi(const char *str);
@@ -70,7 +74,7 @@ void	rra(t_brain *brain);
 void	rrb(t_brain *brain);
 void	rrr(t_brain *brain);
 
-// -------- ERROR ----------
+// ------- ERROR ----------
 int		error_check(int argc, char **argv);
 
 #endif
