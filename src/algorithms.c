@@ -15,33 +15,31 @@
 void	long_len(t_brain *brain)
 {
 	int	i;
-	int	curcheck;
+	int	g;
 	int	mod;
 	int	temp;
 
 	i = 0;
-	curcheck = 0;
+	g = 1;
 	mod = cur_mod(&*brain);
 	temp = 0;
-	while (curcheck < 1)
+	while (g < brain->stacklen)
 	{
 		while (i < brain->stacklen)
 		{
-			//temp = brain->stacka[i] % 2;
-			//if (mod > 10)
-			//	temp = temp / (mod / 10);
-			//if (temp == curcheck)
-			//	move_top(&*brain, i);
-			if ((brain->stacka[0] % 2) == 0)
-				pb(&*brain);
-			else
+			temp = brain->stacka[0]/g;
+			while (temp > 1)
+				temp = temp % 2;
+			if (temp == 0)
 				ra(&*brain);
+			else
+				pb(&*brain);
 			i++;
 		}
+		restack_a(&*brain);
 		i = 0;
-		curcheck++;
+		g *= 2;
 	}
-	//restack_a(&*brain);
 	brain->rsteps++;
 }
 
