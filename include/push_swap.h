@@ -49,6 +49,7 @@ void	five_len(t_brain *brain);
 // ------- SORT HELPERS ----
 void 	move_top(t_brain *brain, int pos);
 void 	restack_a(t_brain *brain);
+void	restack_b(t_brain *brain);
 
 // ------- HELPERS ---------
 int		*normalize(t_brain *brain);

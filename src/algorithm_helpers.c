@@ -51,14 +51,26 @@ void move_top(t_brain *brain, int pos)
 	pb(&*brain);
 }
 
-void restack_a(t_brain *brain)
+void	restack_a(t_brain *brain)
 {
 	int	i;
 
 	i = 0;
-	while (i < brain->stacklen)
+	while (i < brain->alen)
 	{
 		pa(&*brain);
+		i++;
+	}
+}
+
+void	restack_b(t_brain *brain)
+{
+	int	i;
+
+	i = 0;
+	while (i < brain->blen)
+	{
+		pb(&*brain);
 		i++;
 	}
 }
