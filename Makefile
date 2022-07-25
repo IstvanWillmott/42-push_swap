@@ -39,8 +39,8 @@ CFLAGS	= -Wall -Wextra -Werror -g
 
 # build instructions
 all: obj $(NAME)
-	./$(NAME) "45 6 192 2 3 -21 1872 -2 -391"
-	./$(NAME) 45 6 192 2 3 -21 1872 -2 -391
+#	./$(NAME) "45 6 192 2 3 -21 1872 -2 -391"
+#	./$(NAME) 45 6 192 2 3 -21 1872 -2 -391
 
 obj:
 	mkdir -p $(OBJDIR)

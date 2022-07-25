@@ -16,12 +16,10 @@ void	long_len(t_brain *brain)
 {
 	int	i;
 	int	g;
-	//int	mod;
 	int	temp;
 
 	i = 0;
 	g = 1;
-	//mod = cur_mod(&*brain);
 	temp = 0;
 	while (g < brain->stacklen)
 	{
@@ -31,13 +29,12 @@ void	long_len(t_brain *brain)
 			while (temp > 1)
 				temp = temp % 2;
 			if (temp == 0)
-				ra(&*brain);
-			else
 				pb(&*brain);
+			else
+				ra(&*brain);
 			i++;
 		}
 		restack_a(&*brain);
-		//restack_b(&*brain);
 		i = 0;
 		g *= 2;
 	}

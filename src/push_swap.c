@@ -69,6 +69,7 @@ int	main(int argc, char **argv)
 		//initialize(&brain);
 		//move_top(&brain, 4);
 		//TESTING ---------
+		
 		printf("Stacklen: %d\n", brain.alen);
 		for (int i = 0; i < brain.stacklen; i++)
 		{
