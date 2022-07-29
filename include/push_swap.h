@@ -26,8 +26,6 @@ typedef struct s_brain
 	int	blen;
 	int	*stackc;
 	int	moves;
-	int *radixls;
-	int	rsteps;
 }	t_brain;
 
 typedef struct s_normalize

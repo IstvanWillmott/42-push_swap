@@ -38,7 +38,6 @@ void	long_len(t_brain *brain)
 		i = 0;
 		g *= 2;
 	}
-	brain->rsteps++;
 }
 
 void	initialize(t_brain *brain)

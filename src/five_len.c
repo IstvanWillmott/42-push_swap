@@ -14,10 +14,21 @@
 
 void	pos_back(t_brain *brain, int pos)
 {
-	while (pos != 5)
+	if (brain->alen == 5)
 	{
-		rra(&*brain);
-		pos++;
+		while (pos != 5)
+		{
+			rra(&*brain);
+			pos++;
+		}
+	}
+	if (brain->alen == 4)
+	{
+		while (pos != 4)
+		{
+			rra(&*brain);
+			pos++;
+		}
 	}
 }
 

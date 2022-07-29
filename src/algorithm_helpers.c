@@ -12,21 +12,6 @@
 
 #include "push_swap.h"
 
-int cur_mod(t_brain *brain)
-{
-    int i;
-    int mod;
-
-    i = 0;
-    mod = 10;
-    while (i < brain->rsteps)
-    {
-        mod *= 10;
-        i++;
-    }
-    return (mod);
-}
-
 void move_top(t_brain *brain, int pos)
 {
     int i;
@@ -53,24 +38,6 @@ void move_top(t_brain *brain, int pos)
 
 void	restack_a(t_brain *brain)
 {
-	int	i;
-
-	i = 0;
-	while (i < brain->alen)
-	{
+	while (brain->blen > 0)
 		pa(&*brain);
-		i++;
-	}
-}
-
-void	restack_b(t_brain *brain)
-{
-	int	i;
-
-	i = 0;
-	while (i < brain->blen)
-	{
-		pb(&*brain);
-		i++;
-	}
 }
