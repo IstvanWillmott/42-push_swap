@@ -40,18 +40,16 @@ typedef struct s_normalize
 // ------- SORT ------------
 void	initialize(t_brain *brain);
 void	copy_list(t_brain *brain);
-void	radix(t_brain *brain);
 void	three_len(t_brain *brain);
 void	five_len(t_brain *brain);
 
 // ------- SORT HELPERS ----
-void 	move_top(t_brain *brain, int pos);
-void 	restack_a(t_brain *brain);
-void	restack_b(t_brain *brain);
+void	restack_a(t_brain *brain);
 
 // ------- HELPERS ---------
 int		*normalize(t_brain *brain);
 int		ft_atoi(const char *str);
+int		ft_atoi_error(const char	*str);
 char	**ft_split(char const *s, char c);
 int		*ft_calloc(int count);
 int		cur_mod(t_brain *brain);

@@ -25,7 +25,7 @@ void	long_len(t_brain *brain)
 	{
 		while (i < brain->stacklen)
 		{
-			temp = brain->stacka[0]/g;
+			temp = brain->stacka[0] / g;
 			while (temp > 1)
 				temp = temp % 2;
 			if (temp == 0)

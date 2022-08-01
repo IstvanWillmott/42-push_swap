@@ -27,6 +27,8 @@ int	argv_array_duplicate(char **argv)
 	{
 		strgcur = ft_atoi(stacktest[i]);
 		g = i + 1;
+		if (ft_atoi_error(stacktest[i]) == 1)
+			return (1);
 		while (stacktest[g])
 		{
 			if (strgcur == ft_atoi(stacktest[g]))
@@ -55,6 +57,8 @@ int	argv_list_diplicate(char **argv)
 	{
 		g = i + 1;
 		strgcur = ft_atoi(argv[i]);
+		if (ft_atoi_error(argv[i]) == 1)
+			return (1);
 		while (argv[g])
 		{
 			checkcur = ft_atoi(argv[g]);
