@@ -36,7 +36,7 @@ void	pa(t_brain *brain)
 		brain->alen++;
 	}
 	brain->moves++;
-	write(1, "pa\n", 4);
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_brain *brain)
@@ -63,5 +63,5 @@ void	pb(t_brain *brain)
 		brain->blen++;
 	}
 	brain->moves++;
-	write(1, "pb\n", 4);
+	write(1, "pb\n", 3);
 }

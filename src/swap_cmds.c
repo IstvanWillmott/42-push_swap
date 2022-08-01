@@ -24,7 +24,7 @@ void	sa(t_brain *brain)
 		brain->stacka[0] = i;
 	}
 	brain->moves++;
-	write(1, "sa\n", 4);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_brain *brain)
@@ -39,7 +39,7 @@ void	sb(t_brain *brain)
 		brain->stackb[0] = i;
 	}
 	brain->moves++;
-	write(1, "sb\n", 4);
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_brain *brain)

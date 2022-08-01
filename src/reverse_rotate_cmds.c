@@ -29,7 +29,7 @@ void	rra(t_brain *brain)
 		brain->stacka[i] = strg;
 	}
 	brain->moves++;
-	write(1, "rra\n", 5);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_brain *brain)
@@ -49,7 +49,7 @@ void	rrb(t_brain *brain)
 		brain->stackb[i] = strg;
 	}
 	brain->moves++;
-	write(1, "rrb\n", 5);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_brain *brain)
