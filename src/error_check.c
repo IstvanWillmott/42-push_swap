@@ -35,7 +35,6 @@ int	argv_array_duplicate(char **argv)
 				return (1);
 			g++;
 		}
-		g++;
 		i++;
 	}
 	free (stacktest);

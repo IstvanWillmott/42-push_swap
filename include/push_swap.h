@@ -52,7 +52,6 @@ int		ft_atoi(const char *str);
 int		ft_atoi_error(const char	*str);
 char	**ft_split(char const *s, char c);
 int		*ft_calloc(int count);
-int		cur_mod(t_brain *brain);
 
 // ------- COMMANDS --------
 //Swap
@@ -73,5 +72,6 @@ void	rrr(t_brain *brain);
 
 // ------- ERROR ----------
 int		error_check(int argc, char **argv);
+int		already_in_order(t_brain *brain);
 
 #endif

@@ -18,6 +18,16 @@ void	restack_a(t_brain *brain)
 		pa(&*brain);
 }
 
+int	error_ret(int ret, int neg)
+{
+	if ((ret * neg) < 0 && neg == 1)
+		return (1);
+	else if ((ret * neg) > 0 && neg == -1)
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_atoi_error(const char	*str)
 {
 	int	ret;
@@ -44,10 +54,19 @@ int	ft_atoi_error(const char	*str)
 		ret = ret * 10 + (str[i] - 48);
 		i++;
 	}
-	if ((ret*neg) < 0 && neg == 1)
-		return (1);
-	else if ((ret*neg) > 0 && neg == -1)
-		return (1);
-	else
-		return (0);
+	return (error_ret(ret, neg));
+}
+
+int	already_in_order(t_brain *brain)
+{
+	int	i;
+
+	i = 1;
+	while (i < brain->stacklen)
+	{
+		if (brain->stacka[i - 1] != brain->stacka[i] - 1)
+			return (1);
+		i++;
+	}
+	return (0);
 }
