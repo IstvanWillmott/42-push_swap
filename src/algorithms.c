@@ -44,7 +44,7 @@ void	initialize(t_brain *brain)
 {
 	if (brain->alen == 3)
 		three_len(&*brain);
-	if (brain->alen == 4)
+	else if (brain->alen == 4)
 		five_len(&*brain);
 	else if (brain->alen == 5)
 		five_len(&*brain);
