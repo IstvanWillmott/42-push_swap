@@ -48,7 +48,7 @@ void	five_len(t_brain *brain)
 
 	i = 4;
 	pos = 0;
-	while (i <= 5)
+	while (i <= brain->stacklen)
 	{
 		while (brain->stacka[pos] != i)
 			pos++;
@@ -64,5 +64,6 @@ void	five_len(t_brain *brain)
 	pa(&*brain);
 	pa(&*brain);
 	ra(&*brain);
-	ra(&*brain);
+	if (brain->stacklen == 5)
+		ra(&*brain);
 }

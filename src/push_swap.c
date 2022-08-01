@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	*stackc_list(int argc, char *argv[], t_brain *brain)
 {
